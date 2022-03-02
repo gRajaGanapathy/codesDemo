@@ -1,0 +1,7 @@
+{
+  "name": "bharath_matrimony",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

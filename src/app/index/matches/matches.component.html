@@ -1,0 +1,110 @@
+<ion-content class="main_sec ioncontent1">
+  <div [ngClass]="tabType == 'regular' ? 'header_bg':'header_bg_1'">
+    <div class="tabSet">
+      <ion-buttons slot="start">
+        {{tabType}}
+        <ion-button [ngClass]="tabType === 'regular' ? 'yesbutton_regular':'confirmbutton_regular'"
+          (click)="switchTab('regular')">Regular
+        </ion-button>
+        <ion-button [ngClass]="tabType == 'prime' ? 'yesbutton_prime':'confirmbutton_prime'"
+          (click)="switchTab('prime')">
+          PRIME
+        </ion-button>
+      </ion-buttons>
+    </div>
+    <ion-grid>
+      <ion-row class="ion-text-left">
+        <ion-col size="6" class="my-auto">
+          <h5>MATCHES</h5>
+
+        </ion-col>
+        <ion-col size="6" class="pt-2 ion-margin-top ion-text-right">
+          <ion-icon name="notifications-outline"></ion-icon>
+          <ion-icon name="headset-outline"></ion-icon>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-content>
+    <ion-segment (ionChange)="segmentChanged($event)" value="list">
+      <ion-segment-button value="all">
+        <ion-label>
+          All Matches
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="new">
+        <ion-label>
+          New Matches
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="premium">
+        <ion-label>
+          Premium Matches
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="mutual">
+        <ion-label>
+          Mutual Matches
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="viewed">
+        <ion-label>
+          Viewed You
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        <ion-label>
+          Shortlisted You
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        <ion-label>
+          Looking for You Matches
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        <ion-label>
+          Horoscope Matches
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        <ion-label>
+          Viewed By You
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        <ion-label>
+          Shortlisted By You
+        </ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="card">
+        <ion-label>
+          Nearby Matches
+        </ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <!-- <ion-list class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list'">
+      <ion-item *ngFor="let item of arr; let index = index">
+        <ion-label>Item {{ index + 1 }}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <div class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'card'">
+      <ion-card *ngFor="let item of arr; let index = index">
+        <ion-card-content>
+          <h2>Card {{ index + 1 }}</h2>
+        </ion-card-content>
+      </ion-card>
+    </div> -->
+  </ion-content>
+
+
+  <!-- <mat-tab-group class="header_bg" mat-align-tabs="center" *ngIf="tabType == 'regular'" [selectedIndex]="selected"
+    (selectedIndexChange)="tabChange($event)">
+    <mat-tab *ngFor="let tab of tabs" [label]="tab.name">
+      <app-regular-matches [profileList]="currentTabData"></app-regular-matches>
+    </mat-tab>
+  </mat-tab-group>
+  <app-prime-matches *ngIf="tabType == 'prime'"></app-prime-matches> -->
+</ion-content>

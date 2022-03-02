@@ -1,0 +1,66 @@
+<ion-content class="ioncontent" fullscreen="true">
+  <ion-list>
+    <ion-row>
+      <ion-col size="12" size-md="12">
+        <ion-list class="d-flex ion-justify-content-center">
+          <ion-item class="text-center">
+            <ion-button (click)="onClick()" shape="round" class="">
+              Regular
+            </ion-button>
+            <ion-button (click)="onClick()" shape="round">
+              prime
+            </ion-button>
+          </ion-item>
+        </ion-list>
+        <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="https://picsum.photos/300/200/?random=1000">
+          </ion-avatar>
+          <ion-label>
+            <p>Good Afternoon!</p>
+            <h3>Jhon</h3>
+          </ion-label>
+          <ion-icon id="main-content" name="chatbox-ellipses-outline"></ion-icon>
+          <ion-menu-button>
+            <ion-icon id="main-content" name="options-outline"></ion-icon>
+          </ion-menu-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+</ion-content>
+<ion-menu side="start" content-id="main-content">
+  <ion-content>
+    <ion-item lines="none">
+      <ion-menu-button slot="start">
+        <ion-icon id="main-content" name="arrow-back-outline"></ion-icon>
+      </ion-menu-button>
+    </ion-item>
+    <ion-list lines="none" class="ion-text-center">
+      <ion-avatar class="mx-auto">
+        <img src="https://picsum.photos/300/200/?random=1000">
+      </ion-avatar>
+      <ion-label>
+        <h3>Jhon</h3>
+        <h3>M8884157</h3>
+        <p>Special discount of Rs.2200 on 3 month Platinum Pack</p>
+        <ion-button color="warning" shape="round" class="text-white">Upgrade Membership</ion-button>
+      </ion-label>
+    </ion-list>
+    <ion-list class="ion-padding-start">
+      <ion-item lines="none" *ngFor="let item of list">
+        <ion-row *ngIf="item?.image">
+          <ion-col size="2">
+            <img src="{{item.image}}">
+          </ion-col>
+          <ion-col size="8" class="my-auto">{{item?.title}}</ion-col>
+          <ion-col size="2" class="my-auto">
+            <ion-icon name="{{item.icon}}"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <hr *ngIf="!item?.name">
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
