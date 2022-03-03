@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  tabType: any = 'regular';
   list = [
     // {br: true},
     {image: 'assets/images/edit-1.png', title: 'Edit Profile'},
@@ -31,8 +32,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  onClick(){
-    
+  switchTab(type: string) {
+    this.tabType = type;
   }
 
 }

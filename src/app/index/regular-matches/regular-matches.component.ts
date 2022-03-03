@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-declare var $: any;
+declare let $: any;
 
 @Component({
   selector: 'app-regular-matches',
@@ -13,13 +13,13 @@ export class RegularMatchesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    $(window).scroll(() =>{
-      if ($(this).scrollTop() > 300) {
-          $('.header_bg').addClass('scroll_page');
-      } else {
-          $('.header_bg').removeClass('scroll_page');
-      }
-    });
+    // $(window).scroll(() =>{
+    //   if ($(this).scrollTop() > 300) {
+    //       $('.header_bg').addClass('scroll_page');
+    //   } else {
+    //       $('.header_bg').removeClass('scroll_page');
+    //   }
+    // });
   }
 
 }
