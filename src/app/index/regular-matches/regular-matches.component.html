@@ -1,4 +1,4 @@
-<ion-content class="border_radius">
+<ion-content class="border_radius" *ngIf="currentRout === 'home'">
     <ion-list class="bg_custom">
         <ion-row>
             <ion-col size-lg="8" size="6" class="my-auto">
@@ -26,12 +26,13 @@
                     <div>196 New Matches</div>
                     <div>See all</div>
                 </div>
-                <swiper [slidesPerView]="3.5" [spaceBetween]="30" [loop]="false" [allowTouchMove]="true"
+                <swiper [slidesPerView]="3.5" [spaceBetween]="10" [loop]="false" [allowTouchMove]="true"
                     [centeredSlides]="false" class="mySwiper" id="mySwiperID">
-                    <ng-template swiperSlide *ngFor="let item of allProfiles; index as i">
+                    <ng-template swiperSlide *ngFor="let item of justJoined; index as i">
                         <div>
-                            <img height="500" class="rounded h-100 w-100"
-                                src="https://picsum.photos/300/300/?random={{i}}" />
+                            <ion-card class="card_height m-0">
+                                <img class="rounded" src="https://picsum.photos/300/300/?random={{i}}" />
+                            </ion-card>
                             <div class="ion-text-nowrap font ion-text-start">
                                 <h3 class="fw-bold">{{item.profileName}}</h3>
                                 {{item.age}} yrs, {{item.height}}
@@ -41,5 +42,79 @@
                 </swiper>
             </ion-card-content>
         </ion-card>
+    </ion-list>
+</ion-content>
+<ion-content *ngIf="currentRout === 'matches'" class="border_radius">
+    <ion-list class="bg_custom vh-200">
+        <ion-grid lines="none" *ngFor="let item of filterProfile; let i = index">
+            <ion-row>
+                <ion-col size="12" size-md="10" offset-md="1" offset-lg="3" size-lg="6">
+                    <ion-card class="m-0">
+                        <ion-row>
+                            <ion-col size="4" size-sm="4" size-md="4" size-lg="4" class="ion-align-self-center">
+                                <img height="500" class="rounded h-100 w-100" [src]="item.imgUrl" />
+                            </ion-col>
+                            <ion-col class="" size="8" size-md="8" size-lg="8" size-sm="8">
+                                <div>
+                                    <span class="d-flex">
+                                        <ion-icon slot="start" name="shield-checkmark-outline" color="primary"
+                                            class="my-auto"></ion-icon>
+                                        <span class="col ms-1">
+                                            <ion-text color="primary">Verified</ion-text>
+                                        </span>
+                                        <ion-icon slot="start" name="ribbon-outline" color="tertiary" class="my-auto"
+                                            *ngIf="item.isPrimeUser"></ion-icon>
+                                        <span class="col ms-1" *ngIf="item.isPrimeUser">
+                                            <ion-text color="tertiary">Prime Gold</ion-text>
+                                        </span>
+                                    </span>
+                                    <span class="ps-1" *ngIf="item.isPrimeMember">
+                                        <ion-icon slot="start" name="sparkles-outline" color="primary" class="col">
+                                        </ion-icon>
+                                        <span class="col ms-1">
+                                            <ion-text color="primary">PrimePlatinum</ion-text>
+                                        </span>
+                                    </span>
+                                </div>
+                                <h6 class="mb-0 mt-2 text-dark">{{item.profileName}}</h6>
+                                <p class="m-0">
+                                    <sub>{{item.age}}yrs,<span>{{item.height}},</span><span>{{item.degree}},</span><span>{{item.caste}}</span></sub>
+                                    <span><sub>{{item.city}}, <span>{{item.state}}</span></sub></span>
+                                </p>
+
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="ion-text-center">
+                            <ion-col size="12" class="d-flex ion-justify-content-center ion-text-nowrap">
+                                <span class="px-1 d-flex">
+                                    <ion-icon slot="start" name="logo-whatsapp" class="pe-1" color="success"></ion-icon>
+                                    <p class="m-0">WhatsApp</p>
+                                </span>
+                                |
+                                <span class="px-1 d-flex">
+                                    <ion-icon slot="start" name="eye-off-outline" class="pe-1" color="dark"></ion-icon>
+                                    <p class="m-0">Don't Show </p>
+                                </span>
+                                |
+                                <span class="px-1 d-flex">
+                                    <ion-icon slot="start" name="star-outline" class="pe-1"></ion-icon>
+                                    <p class="m-0">Shortlist</p>
+                                </span>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row class="ion-text-center">
+                            <ion-col size="12">
+                                <span class="my-auto d-flex">
+                                    <b class="ion-text-capitalize text-dark mt-3 ms-1">like her profile ? connect now</b> <span
+                                        class="mt-2 ms-2">
+                                        <ion-icon class="fs-2  check_custom rounded-pill border"
+                                            name="checkmark-outline" (click)="voteUp(true)"></ion-icon>
+                                    </span></span>
+                            </ion-col>
+                        </ion-row>
+                    </ion-card>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </ion-list>
 </ion-content>

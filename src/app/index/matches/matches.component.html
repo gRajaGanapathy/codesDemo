@@ -1,5 +1,5 @@
 <ion-content class="main_sec ioncontent">
-  <div [ngClass]="tabType == 'regular' ? 'header_bg':'header_bg_1'">
+  <ion-list lines="none" class="ion-no-padding"  [ngClass]="tabType == 'regular' ? 'ioncontent':'header_bg'">
     <ion-row>
       <ion-col size="12" class="ion-no-padding">
         <ion-list lines="none" class="py-4 d-flex ion-justify-content-center">
@@ -15,100 +15,27 @@
           </div>
         </ion-list>
       </ion-col>
+      <ion-col *ngIf="tabType == 'regular'">
+        <ion-slides [options]="slideOptions">
+          <ion-slide>
+            <ion-buttons *ngFor="let item of buttons ; let i= index">
+              <ion-button [ngClass]="{'isAct': item.name === name.name, 'inAct': item.name !== name.name}"
+                class="ion-text-capitalize ion-text-wrap" (click)="onClick(item, i)" fill="outline" size="small">
+                {{item.name}}
+              </ion-button>
+            </ion-buttons>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+      <ion-col color="light" *ngIf="tabType == 'regular'">
+        <p class="text-white mx-2 my-2">{{name.TotalCount}} {{name.name}} based on your preference</p>
+      </ion-col>
     </ion-row>
-    <ion-grid>
-      <ion-row class="ion-text-left">
-        <ion-col size="6" class="my-auto">
-          <h5>MATCHES</h5>
-
-        </ion-col>
-        <ion-col size="6" class="pt-2 ion-margin-top ion-text-right">
-          <ion-icon name="notifications-outline"></ion-icon>
-          <ion-icon name="headset-outline"></ion-icon>
-        </ion-col>
-
-      </ion-row>
-    </ion-grid>
-  </div>
-  <ion-content>
-    <ion-segment (ionChange)="segmentChanged($event)" value="list">
-      <ion-segment-button value="all">
-        <ion-label>
-          All Matches
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="new">
-        <ion-label>
-          New Matches
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="premium">
-        <ion-label>
-          Premium Matches
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="mutual">
-        <ion-label>
-          Mutual Matches
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="viewed">
-        <ion-label>
-          Viewed You
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="card">
-        <ion-label>
-          Shortlisted You
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="card">
-        <ion-label>
-          Looking for You Matches
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="card">
-        <ion-label>
-          Horoscope Matches
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="card">
-        <ion-label>
-          Viewed By You
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="card">
-        <ion-label>
-          Shortlisted By You
-        </ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="card">
-        <ion-label>
-          Nearby Matches
-        </ion-label>
-      </ion-segment-button>
-    </ion-segment>
-    <!-- <ion-list class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'list'">
-      <ion-item *ngFor="let item of arr; let index = index">
-        <ion-label>Item {{ index + 1 }}</ion-label>
-      </ion-item>
-    </ion-list>
-
-    <div class="animate__animated animate__slideInUp animate__fast" *ngIf="segment === 'card'">
-      <ion-card *ngFor="let item of arr; let index = index">
-        <ion-card-content>
-          <h2>Card {{ index + 1 }}</h2>
-        </ion-card-content>
-      </ion-card>
-    </div> -->
+  </ion-list>
+  <ion-content *ngIf="tabType == 'regular'" class="custom_regular">
+    <app-regular-matches [currentRout]="currentRout" [matchedValue]="newData"></app-regular-matches>
   </ion-content>
-
-
-  <!-- <mat-tab-group class="header_bg" mat-align-tabs="center" *ngIf="tabType == 'regular'" [selectedIndex]="selected"
-    (selectedIndexChange)="tabChange($event)">
-    <mat-tab *ngFor="let tab of tabs" [label]="tab.name">
-      <app-regular-matches [profileList]="currentTabData"></app-regular-matches>
-    </mat-tab>
-  </mat-tab-group>
-  <app-prime-matches *ngIf="tabType == 'prime'"></app-prime-matches> -->
+  <ion-content *ngIf="tabType == 'prime'" class="custom_prime">
+    <app-prime-matches *ngIf="tabType == 'prime'"></app-prime-matches>
+  </ion-content>
 </ion-content>

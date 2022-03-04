@@ -1,3 +1,12 @@
+.custom_regular {
+  height: calc(100vh - 271px) !important;
+  overflow: hidden;
+}
+.custom_prime{
+  height: calc(100vh - 155px);
+  overflow: hidden;
+}
+
 .ioncontent {
   --ion-background-color: linear-gradient(
     90deg,
@@ -9,7 +18,7 @@
 }
 .header_bg {
   --ion-background-color: linear-gradient(90deg, #020024 0%, #5e4882 0%, #552772 99%, #9f36cb 100%);
-  height: 98px;
+  // height: 98px;
 }
 
 .yesbutton_regular {
@@ -63,29 +72,40 @@
   position: relative;
   margin-left: -22px;
 }
+// buttons
+.isActive {
+  --background: hsl(180, 89%, 30%) !important;
+  --color: white !important;
+  --font-weight: 600 !important;
+  border-radius: 15px;
+  position: relative;
+  left: 11px;
+}
 
+.inActive {
+  --background: white !important;
+  --color: rgb(178, 26, 224) !important;
+  border-radius: 15px;
+}
 
-  
-  :host ::ng-deep {
-    .mat-tab-label,
-    .mat-tab-link {
-      color: white;
-      font-weight: bolder;
-      font-size: 19px;
-    }
-  }
-  
-  .font-size {
-    font-size: 19px;
-    font-weight: 600;
-  }
-  .ioncontent{
-    background-image: linear-gradient(
-      90deg,
-      rgba(2, 0, 36, 1) 0%,
-      rgba(85, 185, 113, 1) 0%,
-      rgba(39, 178, 180, 1) 99%,
-      rgba(0, 212, 255, 1) 100%
-    );
-    // --ion-background-color: linear-gradient(#58ba6b,#3cb2ab, #3eb594);
-  }
+.isAct {
+  --background: hsl(180, 89%, 30%) !important;
+  --color: white !important;
+  --font-weight: 600 !important;
+  --border-radius: 7px !important;
+  --border-width: 0px !important;
+  --border-color: none !important;
+  margin: 10px !important;
+  --padding: 0px 0px !important;
+  height: 42px !important;
+}
+
+.inAct {
+  --color: white !important;
+  --border-radius: 7px !important;
+  --border-width: 1px !important;
+  --border-color: none !important;
+  margin: 10px !important;
+  --padding: 0px 0px !important;
+  height: 42px !important;
+}
