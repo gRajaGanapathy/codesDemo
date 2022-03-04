@@ -38,8 +38,10 @@
       </ion-col>
     </ion-row>
   </ion-list>
-  <ion-content>
-    <app-regular-matches *ngIf="tabType == 'regular'" [currentRout]="currentRout"></app-regular-matches>
+  <ion-content *ngIf="tabType == 'regular'" class="custom_regular">
+    <app-regular-matches [currentRout]="currentRout"></app-regular-matches>
+  </ion-content>
+  <ion-content *ngIf="tabType == 'prime'" class="custom_prime">
     <app-prime-matches *ngIf="tabType == 'prime'"></app-prime-matches>
   </ion-content>
 

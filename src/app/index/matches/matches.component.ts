@@ -12,7 +12,7 @@ export class MatchesComponent implements OnInit {
   tabType: any = 'regular';
   allProfiles: any;
   buttons: any[] = [
-    { name: 'All Matches', id: 'matches', i: 0, TotalCount: '28' },
+    { name: 'All Matches', id: 'matches', i: 0, TotalCount: '1008' },
     { name: 'New Matches', id: 'justJoined', i: 1, TotalCount: '22' },
     { name: 'Premium Matches', id: 'premium', i: 2, TotalCount: '42' },
     { name: 'Mutual Matches', id: 'mutual', i: 3, TotalCount: '28' },
@@ -34,7 +34,7 @@ export class MatchesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.name = { name: 'All Matches', id: 'matches', i: 0, TotalCount: '28' };
+    this.name = { name: 'All Matches', id: 'matches', i: 0, TotalCount: '1008' };
     this.getProfileList();
   }
   switchTab(type: string) {
