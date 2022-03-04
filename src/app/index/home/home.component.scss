@@ -1,22 +1,33 @@
 .ioncontent {
-  --ion-background-color: linear-gradient(#58ba6b, #3cb2ab, #3eb594);
-  height: 28vh !important;
+  --ion-background-color: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(85, 185, 113, 1) 0%,
+    rgba(39, 178, 180, 1) 99%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 .header_bg {
-  --ion-background-color: linear-gradient(313deg, #6e4786, #543e6f, #3b335a);
-  height: 28vh !important;
+  --ion-background-color: linear-gradient(90deg, #020024 0%, #5e4882 0%, #552772 99%, #9f36cb 100%);
+  height: 98px;
 }
 
 .yesbutton_regular {
   color: #fff !important;
   border-radius: 25px !important;
-  border: 2px solid #dfdfdf !important;
+  border: 2px solid #fff !important;
   position: relative !important;
   z-index: 2 !important;
-  background-color: #990000 !important;
-  background-image: linear-gradient(1deg, #990000 0%, #ff0000 74%) !important;
+  background-color: #278a85 !important;
+  background-image: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(85, 185, 113, 1) 0%,
+    rgba(39, 178, 180, 1) 99%,
+    rgba(0, 212, 255, 1) 100%
+  );
   height: 42px !important;
-  width: 85px;
+  width: 108px;
 }
 .confirmbutton_regular {
   background-color: #fff !important;
@@ -35,7 +46,7 @@
   background-image: linear-gradient(260deg, #278a85 0%, #298988 0%);
   color: #fff;
   border-radius: 25px;
-  border: 2px solid #dfdfdf;
+  border: 2px solid #fff;
   position: relative !important;
   z-index: 1;
   height: 42px !important;
@@ -43,7 +54,7 @@
 }
 .confirmbutton_prime {
   background-color: #fff;
-  color: black;
+  color: #2a2a72;
   text-transform: capitalize !important;
   width: 108px;
   height: 34px;

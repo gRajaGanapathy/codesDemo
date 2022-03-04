@@ -1,86 +1,45 @@
-<div class="match">
-  <div class="row mt-4">
-      <div class="col-8">
-          <h4>12 New Members Who match your profile information</h4>
-      </div>
-      <div class="icons col-4">
-          <button mat-raised-button>
-              <mat-icon>edit</mat-icon> Edit
-          </button>
-      </div>
-  </div>
-  <div class="card-wrapper shadow px-2 bg-white rounded" *ngFor="let item of profileList; index as i">
-      <div class="card-flex">
-          <div class="card_img">
-              <img class="ms-2 mt-3" src="https://picsum.photos/300/200/?random={{ i + imgCount}}"
-                  alt="Card image">
-          </div>
-          <div class="card-description ">
-              <div class="card_title">
-                  <ul>
-                      <li class="item_list">{{item.profileId}}</li>
-                      <li *ngIf="item.isPrimeUser" class="prime_list" >{{item.profileType}}
-                          <span>
-                              <mat-icon class="rotateIcon text-warning"> turned_in </mat-icon>
-                          </span>
-                      </li>
-                      <mat-icon class="float-end">more_vert</mat-icon>
-                  </ul>
-              </div>
-              <h3 class="card-title" id="blur">{{item.profileName}}</h3>
-              <h5 class="card-text">{{item.age}} yrs, {{item.height}}", {{item.degree}}, {{item.caste}},
-                  {{item.city}}, {{item.state}}</h5>
-          </div>
-      </div>
-      <ul class="share d-flex justify-content-between mx-1">
-          <span><img class="mb-1" src="../../../assets/images/skyBlueStar.png" alt="img" />
-              <li>Shortlist</li>
-          </span>
-          <span><img src="../../../assets/images/comment.png" alt="img" />
-              <li>2 Wks ago</li>
-          </span>
-          <span><img src="../../../assets/images/roundTick.png" alt="img" />
-              <li>Send Interest</li>
-          </span>
-      </ul>
-      
-  </div>
-  
-</div>
-<div>
-  <nav>
-      <a href="#page-1">1</a>
-      <a href="#page-2">2</a>
-      <a href="#page-3">3</a>
-    </nav>
-    <div class="scroll-container">
-      <div class="scroll-page" id="page-1">1</div>
-      <div class="scroll-page" id="page-2">2</div>
-      <div class="scroll-page" id="page-3">3</div>
-    </div>
-</div>
-
-<div class="footer">
-  <ul class="d-flex justify-content-between">
-      <li>
-          <mat-icon class="text-muted ms-2"> home </mat-icon>
-          <p> Home </p>
-      </li>
-      <li>
-          <mat-icon class="text-muted ms-3"> group </mat-icon>
-          <p>Matches</p>
-      </li>
-      <li>
-          <mat-icon class="text-muted ms-1"> mail </mat-icon>
-          <p> Mail </p>
-      </li>
-      <li>
-          <mat-icon class="text-muted ms-2"> search </mat-icon>
-          <p> Search </p>
-      </li>
-      <li>
-          <mat-icon class="text-muted ms-2"> person </mat-icon>
-          <p> Profile </p>
-      </li>
-  </ul>
-</div>
+<ion-content class="border_radius">
+    <ion-list class="bg_custom">
+        <ion-row>
+            <ion-col size-lg="8" size="6" class="my-auto">
+                <p class="m-0">Your Profile is Pending Verification!</p>
+            </ion-col>
+            <ion-col size-lg="4" size="6" class="ion-text-end">
+                <ion-button shape="round" color="warning">Verify Now</ion-button>
+            </ion-col>
+        </ion-row>
+        <ion-card class="mx-0 border-bottom-0">
+            <ion-card>
+                <div class="d-flex border">
+                    <ion-icon class="fs-1 my-auto mx-2" name="telescope-outline"></ion-icon>
+                    <p class="text-dark">TamilMatrimony is the Most Trusted and Largest Matrimony Service for Tamils
+                        across the world
+                    </p>
+                    <ion-icon color="warning" class="fs-1 my-auto mx-2" name="chevron-forward-outline"></ion-icon>
+                </div>
+            </ion-card>
+            <ion-card-content>
+                <img class="h-100 w-100 rounded" src="../../../assets/images/logo.png" alt="">
+            </ion-card-content>
+            <ion-card-content>
+                <div class="d-flex justify-content-between">
+                    <div>196 New Matches</div>
+                    <div>See all</div>
+                </div>
+                <swiper [slidesPerView]="3.5" [spaceBetween]="30" [loop]="false" [allowTouchMove]="true"
+                    [centeredSlides]="false" class="mySwiper" id="mySwiperID">
+                    <ng-template swiperSlide *ngFor="let item of allProfiles; index as i">
+                        <div>
+                            <img height="500" class="rounded h-100 w-100"
+                                src="https://picsum.photos/300/300/?random={{i}}" />
+                            <div class="ion-text-nowrap font ion-text-start">
+                                <h3 class="fw-bold">{{item.profileName}}</h3>
+                                {{item.age}} yrs, {{item.height}}
+                            </div>
+                        </div>
+                    </ng-template>
+                </swiper>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+</ion-content>

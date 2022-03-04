@@ -1,0 +1,20 @@
+.border_radius{
+  border-top-right-radius: 15px;
+}
+ion-content {
+  --ion-background-color: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(85, 185, 113, 1) 0%,
+    rgba(39, 178, 180, 1) 99%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.bg_custom{
+  border-radius: 15px 15px 0px 0px;
+  --ion-background-color: #fff;
+}
+.font {
+  font-size: 12px;
+  color: #000;
+}

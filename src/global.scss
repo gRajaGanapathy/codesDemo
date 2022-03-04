@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -30,9 +30,27 @@
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/helpers";
-@import '~bootstrap/scss/grid';
+@import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities/api";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/containers";
 @import "~bootstrap/scss/tables";
+//swiper 
+@import "~swiper/scss";
+@import "~swiper/scss/autoplay";
+@import "~swiper/scss/keyboard";
+@import "~swiper/scss/pagination";
+@import "~swiper/scss/scrollbar";
+@import "~swiper/scss/zoom";
+@import "~@ionic/angular/css/ionic-swiper";
+@import "~swiper/scss/navigation";
+@import "~swiper/css/effect-cards";
+:root {
+    ion-tab-button.tab-selected {
+      ion-icon, ion-label {
+        color: var(--ion-color-success) !important;
+        --ion-color-base: var(--ion-color-success) !important;
+      }
+    }
+  }

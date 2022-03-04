@@ -1,37 +1,43 @@
-<ion-content fullscreen="true">
-  <div [ngClass]="tabType == 'regular' ? 'ioncontent':'header_bg'">
-    <ion-list>
-      <ion-row>
-        <ion-col size="12" size-md="12">
-          <ion-list class="d-flex ion-justify-content-center">
-            <ion-item class="text-center">
-              <ion-button color="none" shape="round"
-                [ngClass]="tabType === 'regular' ? 'yesbutton_regular':'confirmbutton_regular'"
-                (click)="switchTab('regular')">Regular
-              </ion-button>
-              <ion-button color="none" shape="round"
-                [ngClass]="tabType == 'prime' ? 'yesbutton_prime':'confirmbutton_prime'" (click)="switchTab('prime')">
-                PRIME
-              </ion-button>
-            </ion-item>
-          </ion-list>
-          <ion-item lines="none">
-            <ion-avatar slot="start">
+<ion-content>
+  <ion-list lines="none" class="ion-no-padding" [ngClass]="tabType == 'regular' ? 'ioncontent':'header_bg'">
+    <ion-row>
+      <ion-col size="12" class="ion-no-padding">
+        <ion-list lines="none" class="py-4 d-flex ion-justify-content-center">
+          <div class="text-center">
+            <ion-button color="none" shape="round"
+              [ngClass]="tabType === 'regular' ? 'yesbutton_regular':'confirmbutton_regular'"
+              (click)="switchTab('regular')">Regular
+            </ion-button>
+            <ion-button color="none" shape="round"
+              [ngClass]="tabType == 'prime' ? 'yesbutton_prime':'confirmbutton_prime'" (click)="switchTab('prime')">
+              PRIME
+            </ion-button>
+          </div>
+        </ion-list>
+      </ion-col>
+      <ion-col size="12" *ngIf="tabType == 'regular'">
+        <ion-row>
+          <ion-col size="3">
+            <ion-avatar>
               <img src="https://picsum.photos/300/200/?random=1000">
             </ion-avatar>
+          </ion-col>
+          <ion-col size="7" class="my-auto">
             <ion-label>
               <p class="text-white">Good Afternoon!</p>
               <h3 class="text-white">Jhon</h3>
             </ion-label>
-            <ion-icon color="light" id="main-content" name="chatbox-ellipses-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="2" class="my-auto ion-text-end d-flex">
+            <ion-icon color="light" id="main-content" class="my-auto" name="chatbox-ellipses-outline"></ion-icon>
             <ion-menu-button color="light">
               <ion-icon id="main-content" name="options-outline"></ion-icon>
             </ion-menu-button>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    </ion-list>
-  </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-list>
   <ion-content>
     <app-regular-matches *ngIf="tabType == 'regular'" [profileList]="currentTabData"></app-regular-matches>
     <app-prime-matches *ngIf="tabType == 'prime'"></app-prime-matches>
@@ -40,12 +46,12 @@
 
   <ion-menu side="start" content-id="main-content">
     <ion-content>
-      <ion-item lines="none">
+      <ion-item>
         <ion-menu-button slot="start">
           <ion-icon id="main-content" name="arrow-back-outline"></ion-icon>
         </ion-menu-button>
       </ion-item>
-      <ion-list lines="none" class="ion-text-center">
+      <ion-list class="ion-text-center ion-no-border">
         <ion-avatar class="mx-auto">
           <img src="https://picsum.photos/300/200/?random=1000">
         </ion-avatar>
@@ -58,15 +64,11 @@
       </ion-list>
       <ion-list class="ion-padding-start">
         <ion-item lines="none" *ngFor="let item of list">
-          <ion-row *ngIf="item?.image">
-            <ion-col size="2">
-              <img src="{{item.image}}">
-            </ion-col>
-            <ion-col size="8" class="my-auto">{{item?.title}}</ion-col>
-            <ion-col size="2" class="my-auto">
-              <ion-icon name="{{item.icon}}"></ion-icon>
-            </ion-col>
-          </ion-row>
+          <ion-label class="d-flex">
+            <ion-icon class="fs-4" name="{{item.image}}"></ion-icon>
+            <span class="my-atuo mt-1 ms-3">{{item?.title}}</span>
+            <ion-icon class="mt-1 ms-3" name="{{item.icon}}"></ion-icon>
+          </ion-label>
           <hr *ngIf="!item?.name">
         </ion-item>
       </ion-list>

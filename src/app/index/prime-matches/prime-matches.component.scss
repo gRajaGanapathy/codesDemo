@@ -1,6 +1,7 @@
 .bgprime {
-    background-color: #000000;
-    background-image: linear-gradient(300deg, #000000 0%, #04619f 55%);
+    // background-color: #000000;
+    background-image: linear-gradient(90deg, #020024 0%, #5e4882 0%, #552772 99%, #9f36cb 100%);
+    // background-image: linear-gradient(313deg, #6e4786, #543e6f, #3b335a);
 }
 .prime {
     color: #fff;
@@ -29,6 +30,8 @@
 .regular {
     background: #fff;
     padding: 30px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 .regular button {
     background-color: #45bdee;
