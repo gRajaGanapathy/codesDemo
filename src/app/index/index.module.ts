@@ -9,6 +9,8 @@ import { PrimeMatchesComponent } from './prime-matches/prime-matches.component';
 import { RegularMatchesComponent } from './regular-matches/regular-matches.component';
 import { SwiperModule } from "swiper/angular";
 import { MatchesComponent } from './matches/matches.component';
+import { MailBoxComponent } from './mail-box/mail-box.component';
+import { MailConversationComponent } from './mail-conversation/mail-conversation.component';
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { MatchesComponent } from './matches/matches.component';
     IndexPageRoutingModule,
     SwiperModule
   ],
-  declarations: [IndexPage, HomeComponent, PrimeMatchesComponent, RegularMatchesComponent, MatchesComponent],
+  declarations: [IndexPage, HomeComponent, PrimeMatchesComponent, RegularMatchesComponent, MatchesComponent, MailBoxComponent, MailConversationComponent],
   // exports: [HomeComponent]
 })
 export class IndexPageModule {}

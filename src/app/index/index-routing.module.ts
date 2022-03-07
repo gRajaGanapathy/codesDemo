@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 
 import { IndexPage } from './index.page';
 import { MailBoxComponent } from './mail-box/mail-box.component';
+import { MailConversationComponent } from './mail-conversation/mail-conversation.component';
 import { MatchesComponent } from './matches/matches.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { SearchComponent } from './search/search.component';
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'search',
         component: SearchComponent
+      },
+      {
+        path: 'conversation',
+        component: MailConversationComponent
       }
     ]
   },

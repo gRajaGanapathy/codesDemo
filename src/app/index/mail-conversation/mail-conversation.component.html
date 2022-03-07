@@ -1,0 +1,64 @@
+<ion-content>
+  <ion-row class="mt-5">
+    <ion-col size="2" class="my-auto">
+      <ion-icon name="arrow-back-outline" (click)="onClick()"></ion-icon>
+    </ion-col>
+    <ion-col size="2">
+      <ion-avatar>
+        <img [src]="list.imgUrl">
+      </ion-avatar>
+    </ion-col>
+    <ion-col size="8" class="my-auto ion-padding-start">
+      <ion-label>
+        <h3 class="">{{list.profileName}}</h3>
+        <p class="">{{list.profileId}}</p>
+      </ion-label>
+    </ion-col>
+    <ion-card *ngFor="let item of list.mail_request">
+      <ion-row>
+        <ion-col size="12" class="py-0 d-flex">
+          <ion-col class="ion-no-padding d-flex" size="6">
+            <ion-icon *ngIf="item?.type === 'Interest Sent'" class="text-primary my-auto me-1"
+              name="checkmark-done-outline"></ion-icon>
+            <small class="my-auto">{{item.type}}</small>
+          </ion-col>
+          <ion-col class="ion-no-padding" size="6">
+            <small class="my-1 ion-float-right">{{item.date}}</small>
+            <ion-icon *ngIf="item?.type === 'Interest Sent'" class="ion-float-right me-1 text-success rotate-90"
+              name="arrow-down-outline"></ion-icon>
+            <ion-icon name="arrow-up-outline" *ngIf="item?.type === 'Interest Declined'"
+              class="ion-float-right me-1 text-danger rotate-90"></ion-icon>
+          </ion-col>
+        </ion-col>
+        <ion-col size="12">
+          <ion-row>
+            <ion-col size="11">
+              <small class="text-dark">{{item.request_message}}</small>
+            </ion-col>
+            <ion-col size="1">
+              <ion-icon class="ion-float-end text-muted" name="trash-outline"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="12" *ngIf="item.name">
+          <ion-row>
+            <ion-col class="my-auto" size="2">
+              <div class="rounded-pill border custom_width d-flex px-2">
+                <ion-icon class="fs-5 text-muted my-auto" name="close-outline"></ion-icon>
+                <small class="my-auto">NO</small>
+              </div>
+            </ion-col>
+            <ion-col size="10">
+              <div class="d-flex ion-float-end">
+                <ion-button shape="round" class="text-white" color="warning">
+                  <ion-icon class="text-white" name="add-circle"></ion-icon>
+                  <small class="text-white ps-2">{{item.name}}</small>
+                </ion-button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-row>
+</ion-content>
