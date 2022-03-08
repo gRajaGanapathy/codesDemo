@@ -660,203 +660,388 @@
                 "isPrimeUser": true
             }
         ],
-        "pending": [
-            {
-                "profileId": "MDA578155",
-                "profileName": "kowsalya",
-                "imgUrl": "https://picsum.photos/300/300/?random=180",
-                "age": 25,
-                "height": "5'5",
-                "degree": "BE",
-                "caste": "Vanniyar",
-                "city": "Cuddalore",
-                "state": "Tamil Nadu",
-                "profileType": "",
-                "isPrimeUser": true,
-                
-                "request": {
-                    "request_message": "She has requested you to add family description but you have not added it yet.",
-                    "name": "ADD DETAIL",
-                    "date": "20-Feb-2022",
-                    "request_type": "Request Received"
-                },
-                "mail_request": [
+        "dropdownlist": {
+            "inboxList": {
+                "pending": [
                     {
-                        "request_message": "She has requested you to add family description but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "20-Feb-2022",
-                        "type": "Request Recieved"
+                        "profileId": "MDA578155",
+                        "profileName": "kowsalya",
+                        "imgUrl": "https://picsum.photos/300/300/?random=180",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "",
+                        "isPrimeUser": true,
+                        "request": {
+                            "request_message": "She has requested you to add family description but you have not added it yet.",
+                            "name": "ADD DETAIL",
+                            "date": "20-Feb-2022",
+                            "request_type": "Request Received"
+                        },
+                        "mail_request": [
+                            {
+                                "request_message": "She has requested you to add family description but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "20-Feb-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add horoscope and you have not added it yet.",
+                                "name": "ADD HOROSCOPE",
+                                "date": "22-Feb-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add start/raasi but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "23-Feb-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add gothram but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "23-Feb-2022",
+                                "type": "Request Recieved"
+                            }
+                        ]
                     },
                     {
-                        "request_message": "She has requested you to add horoscope and you have not added it yet.",
-                        "name": "ADD HOROSCOPE",
-                        "date": "22-Feb-2022",
-                        "type": "Request Recieved"
+                        "profileId": "MDA578181",
+                        "profileName": "Lalitha",
+                        "imgUrl": "https://picsum.photos/300/300/?random=181",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "",
+                        "isPrimeUser": true,
+                        "request": {
+                            "request_message": "She has requested you to add family description but you have not added it yet.",
+                            "name": "ADD DETAIL",
+                            "date": "25-Feb-2022",
+                            "request_type": "Request Received"
+                        },
+                        "mail_request": [
+                            {
+                                "request_message": "She has requested you to add family description but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "25-Feb-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add horoscope and you have not added it yet.",
+                                "name": "ADD HOROSCOPE",
+                                "date": "25-Feb-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add start/raasi but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "26-Feb-2022",
+                                "type": "Request Recieved"
+                            }
+                        ]
                     },
                     {
-                        "request_message": "She has requested you to add start/raasi but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "23-Feb-2022",
-                        "type": "Request Recieved"
+                        "profileId": "MDA578161",
+                        "profileName": "Lyrrisha",
+                        "imgUrl": "https://picsum.photos/300/300/?random=182",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "",
+                        "isPrimeUser": true,
+                        "request": {
+                            "request_message": "She has requested you to add family description but you have not added it yet.",
+                            "name": "ADD DETAIL",
+                            "date": "01-Mar-2022",
+                            "request_type": "Request Received"
+                        },
+                        "mail_request": [
+                            {
+                                "request_message": "She has requested you to add family description but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "01-Mar-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add horoscope and you have not added it yet.",
+                                "name": "ADD HOROSCOPE",
+                                "date": "02-Mar-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add start/raasi but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "03-Mar-2022",
+                                "type": "Request Recieved"
+                            },
+                            {
+                                "request_message": "She has requested you to add gothram but you have not added it yet.",
+                                "name": "ADD DETAIL",
+                                "date": "04-Mar-2022",
+                                "type": "Request Recieved"
+                            }
+                        ]
+                    }
+                ],
+                "declined": [
+                    {
+                        "profileId": "MDA573455",
+                        "profileName": "Sivapriya",
+                        "imgUrl": "https://picsum.photos/300/300/?random=185",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "request": {
+                            "request_message": "She has declined your interest",
+                            "name": "ADD DETAIL",
+                            "date": "27-Feb-2022",
+                            "request_type": "Interest Declined"
+                        },
+                        "mail_request": [
+                            {
+                                "request_message": "She has declined your interest",
+                                "date": "27-Feb-2022",
+                                "type": "Interest Declined"
+                            },
+                            {
+                                "request_message": "She read your interest but hasn't responded.",
+                                "date": "27-Feb-2022",
+                                "type": "Interest Sent"
+                            }
+                        ]
                     },
                     {
-                        "request_message": "She has requested you to add gothram but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "23-Feb-2022",
-                        "type": "Request Recieved"
+                        "profileId": "MDA573455",
+                        "profileName": "Dhivya",
+                        "imgUrl": "https://picsum.photos/300/300/?random=186",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "request": {
+                            "request_message": "She has declined your interest",
+                            "name": "ADD DETAIL",
+                            "date": "04-Mar-2022",
+                            "request_type": "Interest Declined"
+                        },
+                        "mail_request": [
+                            {
+                                "request_message": "She has declined your interest",
+                                "date": "04-Mar-2022",
+                                "type": "Interest Declined"
+                            },
+                            {
+                                "request_message": "She read your interest but hasn't responded.",
+                                "date": "04-Mar-2022",
+                                "type": "Interest Sent"
+                            }
+                        ]
+                    }
+                ],
+                "accepted": []
+            },
+            "sentList": {
+                "all": [
+                    {
+                        "profileId": "MDA573456",
+                        "profileName": "Dhivya Selvaraj",
+                        "imgUrl": "https://picsum.photos/300/300/?random=196",
+                        "age": 21,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have send her an interest.",
+                            "name": "SEND REMINDER",
+                            "date": "07-Mar-2022",
+                            "request_type": "Interest Sent"
+                        }
+                    },
+                    {
+                        "profileId": "MDA573458",
+                        "profileName": "D.Sharmila",
+                        "imgUrl": "https://picsum.photos/300/300/?random=197",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Mudaliyar, Sengunthar/Kaikolar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have send her an interest.",
+                            "name": "SEND REMINDER",
+                            "date": "07-Mar-2022",
+                            "request_type": "Interest Sent"
+                        }
+                    },
+                    {
+                        "profileId": "MDA573459",
+                        "profileName": "Vanaja",
+                        "imgUrl": "https://picsum.photos/300/300/?random=198",
+                        "age": 22,
+                        "height": "5'2",
+                        "degree": "BE",
+                        "caste": "Vannia Kula Kshatriyar (Caste No Bar), Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have requested her to add drinking habits.",
+                            "name": "SEND INTEREST",
+                            "date": "07-Mar-2022",
+                            "request_type": "Request Sent"
+                        }
+                    },
+                    {
+                        "profileId": "MDA573455",
+                        "profileName": "Sivapriya",
+                        "imgUrl": "https://picsum.photos/300/300/?random=185",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have send an interest but it has been declined",
+                            "name": "SEND REMINDER",
+                            "date": "07-Mar-2022",
+                            "request_type": "Interest Sent"
+                        },
+                        "mail_request": [
+                            {
+                                "request_message": "She has declined your interest",
+                                "date": "27-Feb-2022",
+                                "type": "Interest Declined"
+                            },
+                            {
+                                "request_message": "She read your interest but hasn't responded.",
+                                "date": "27-Feb-2022",
+                                "type": "Interest Sent"
+                            }
+                        ]
+                    },
+                    {
+                        "profileId": "MDA573455",
+                        "profileName": "Dhivya",
+                        "imgUrl": "https://picsum.photos/300/300/?random=186",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have send her an interest.",
+                            "name": "SEND REMINDER",
+                            "date": "07-Mar-2022",
+                            "request_type": "Interest Sent"
+                        },
+                        "mail_request": [
+                            {
+                                "request_message": "She has declined your interest",
+                                "date": "27-Feb-2022",
+                                "type": "Interest Declined"
+                            },
+                            {
+                                "request_message": "She read your interest but hasn't responded.",
+                                "date": "27-Feb-2022",
+                                "type": "Interest Sent"
+                            }
+                        ]
+                    }
+                ],
+                "awaiting_reply": [
+                    {
+                        "profileId": "MDA573456",
+                        "profileName": "Dhivya Selvaraj",
+                        "imgUrl": "https://picsum.photos/300/300/?random=196",
+                        "age": 21,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have send her an interest.",
+                            "name": "SEND REMINDER",
+                            "date": "07-Mar-2022",
+                            "request_type": "Interest Sent"
+                        }
+                    },
+                    {
+                        "profileId": "MDA573458",
+                        "profileName": "D.Sharmila",
+                        "imgUrl": "https://picsum.photos/300/300/?random=197",
+                        "age": 25,
+                        "height": "5'5",
+                        "degree": "BE",
+                        "caste": "Mudaliyar, Sengunthar/Kaikolar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have send her an interest.",
+                            "name": "SEND REMINDER",
+                            "date": "07-Mar-2022",
+                            "request_type": "Interest Sent"
+                        }
+                    },
+                    {
+                        "profileId": "MDA573459",
+                        "profileName": "Vanaja",
+                        "imgUrl": "https://picsum.photos/300/300/?random=198",
+                        "age": 22,
+                        "height": "5'2",
+                        "degree": "BE",
+                        "caste": "Vannia Kula Kshatriyar (Caste No Bar), Vanniyar",
+                        "city": "Cuddalore",
+                        "state": "Tamil Nadu",
+                        "profileType": "ASSITSES",
+                        "isPrimeUser": true,
+                        "message": {
+                            "message_status": "You have requested her to add drinking habits.",
+                            "name": "SEND INTEREST",
+                            "date": "07-Mar-2022",
+                            "request_type": "Request Sent"
+                        }
                     }
                 ]
             },
-            {
-                "profileId": "MDA578181",
-                "profileName": "Lalitha",
-                "imgUrl": "https://picsum.photos/300/300/?random=181",
-                "age": 25,
-                "height": "5'5",
-                "degree": "BE",
-                "caste": "Vanniyar",
-                "city": "Cuddalore",
-                "state": "Tamil Nadu",
-                "profileType": "",
-                "isPrimeUser": true,
-                
-                "request": {
-                    "request_message": "She has requested you to add family description but you have not added it yet.",
-                    "name": "ADD DETAIL",
-                    "date": "25-Feb-2022",
-                    "request_type": "Request Received"
-                },
-                "mail_request": [
-                    {
-                        "request_message": "She has requested you to add family description but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "25-Feb-2022",
-                        "type": "Request Recieved"
-                    },
-                    {
-                        "request_message": "She has requested you to add horoscope and you have not added it yet.",
-                        "name": "ADD HOROSCOPE",
-                        "date": "25-Feb-2022",
-                        "type": "Request Recieved"
-                    },
-                    {
-                        "request_message": "She has requested you to add start/raasi but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "26-Feb-2022",
-                        "type": "Request Recieved"
-                    }
-                ]
-            },
-            {
-                "profileId": "MDA578161",
-                "profileName": "Lyrrisha",
-                "imgUrl": "https://picsum.photos/300/300/?random=182",
-                "age": 25,
-                "height": "5'5",
-                "degree": "BE",
-                "caste": "Vanniyar",
-                "city": "Cuddalore",
-                "state": "Tamil Nadu",
-                "profileType": "",
-                "isPrimeUser": true,
-                
-                "request": {
-                    "request_message": "She has requested you to add family description but you have not added it yet.",
-                    "name": "ADD DETAIL",
-                    "date": "01-Mar-2022",
-                    "request_type": "Request Received"
-                },
-                "mail_request": [
-                    {
-                        "request_message": "She has requested you to add family description but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "01-Mar-2022",
-                        "type": "Request Recieved"
-                    },
-                    {
-                        "request_message": "She has requested you to add horoscope and you have not added it yet.",
-                        "name": "ADD HOROSCOPE",
-                        "date": "02-Mar-2022",
-                        "type": "Request Recieved"
-                    },
-                    {
-                        "request_message": "She has requested you to add start/raasi but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "03-Mar-2022",
-                        "type": "Request Recieved"
-                    },
-                    {
-                        "request_message": "She has requested you to add gothram but you have not added it yet.",
-                        "name": "ADD DETAIL",
-                        "date": "04-Mar-2022",
-                        "type": "Request Recieved"
-                    }
-                ]
-            }
-        ],
-        "declined":[
-            {
-                "profileId": "MDA573455",
-                "profileName": "Sivapriya",
-                "imgUrl": "https://picsum.photos/300/300/?random=185",
-                "age": 25,
-                "height": "5'5",
-                "degree": "BE",
-                "caste": "Vanniyar",
-                "city": "Cuddalore",
-                "state": "Tamil Nadu",
-                "profileType": "ASSITSES",
-                "isPrimeUser": true,
-                "request": {
-                    "request_message": "She has declined your interest",
-                    "name": "ADD DETAIL",
-                    "date": "27-Feb-2022",
-                    "request_type": "Interest Declined"
-                },
-                "mail_request": [
-                    {
-                        "request_message": "She has declined your interest",
-                        "date": "27-Feb-2022",
-                        "type": "Interest Declined"
-                    },
-                    {
-                        "request_message": "She read your interest but hasn't responded.",
-                        "date": "27-Feb-2022",
-                        "type": "Interest Sent"
-                    }
-                ]
-            },
-            {
-                "profileId": "MDA573455",
-                "profileName": "Dhivya",
-                "imgUrl": "https://picsum.photos/300/300/?random=186",
-                "age": 25,
-                "height": "5'5",
-                "degree": "BE",
-                "caste": "Vanniyar",
-                "city": "Cuddalore",
-                "state": "Tamil Nadu",
-                "profileType": "ASSITSES",
-                "isPrimeUser": true,
-                "request": {
-                    "request_message": "She has declined your interest",
-                    "name": "ADD DETAIL",
-                    "date": "04-Mar-2022",
-                    "request_type": "Interest Declined"
-                },
-                "mail_request": [
-                    {
-                        "request_message": "She has declined your interest",
-                        "date": "04-Mar-2022",
-                        "type": "Interest Declined"
-                    },
-                    {
-                        "request_message": "She read your interest but hasn't responded.",
-                        "date": "04-Mar-2022",
-                        "type": "Interest Sent"
-                    }
-                ]
-            }
-        ]
+            "filteredList": {}
+        }
     }
 }

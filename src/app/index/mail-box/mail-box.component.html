@@ -1,12 +1,14 @@
 <ion-content>
-  <ion-list lines="none" class="pt-4" [ngClass]="tabType == 'regular' ? 'ioncontent':'header_bg'">
+  <ion-list lines="none" class="pt-4 pb-0" [ngClass]="tabType == 'regular' ? 'ioncontent':'header_bg'">
     <ion-row>
       <ion-col size="6">
-        <ion-popover [isOpen]="isPopoverOpen">
-          <ng-template>
-            <p>test</p>
-          </ng-template>
-        </ion-popover>
+        <ion-item>
+          <ion-select interface="popover" class="text-white" value="inbox" (ionChange)="onSelect($event)">
+            <ion-select-option value="inbox">INBOX</ion-select-option>
+            <ion-select-option value="sent">SENT</ion-select-option>
+            <ion-select-option value="filtered">FILTERED</ion-select-option>
+          </ion-select>
+        </ion-item>
       </ion-col>
       <ion-col size="6" class="my-auto ion-text-end d-flex">
         <ion-menu-button color="light">
@@ -29,10 +31,10 @@
           </div>
         </ion-list>
       </ion-col>
-      <ion-col size="12" *ngIf="tabType == 'regular'">
+      <ion-col size="12" class="pb-0" *ngIf="tabType == 'regular' && seletedValue === 'inbox'">
         <ion-row>
-          <ion-col size="12" class="my-auto">
-            <ion-segment color="light" (ionChange)="segmentChanged($event)" value="pending" class="ion-padding-top">
+          <ion-col size="12" class="my-auto pb-0">
+            <ion-segment color="light" (ionChange)="inboxChange($event)" value="pending" class="ion-padding-top">
               <ion-segment-button value="pending">
                 <ion-label>PENDING</ion-label>
               </ion-segment-button>
@@ -46,11 +48,25 @@
           </ion-col>
         </ion-row>
       </ion-col>
+      <ion-col size="12" class="pb-0" *ngIf="tabType == 'regular' && seletedValue === 'sent'">
+        <ion-row>
+          <ion-col size="12" class="my-auto pb-0">
+            <ion-segment color="light" (ionChange)="sentChange($event)" value="all" class="ion-padding-top">
+              <ion-segment-button value="all">
+                <ion-label>ALL</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="awaiting">
+                <ion-label>AWAITING REPLY</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-col>
+        </ion-row>
+      </ion-col>
     </ion-row>
   </ion-list>
-  <ion-content *ngIf="tabType == 'regular'" class="custom_regular">
+  <ion-content *ngIf="tabType == 'regular' && seletedValue === 'inbox'" class="custom_regular">
     <ion-list *ngIf="segment === 'pending'">
-      <ion-card lines="none" *ngFor="let item of pending; let i = index">
+      <ion-card lines="none" *ngFor="let item of dropdownlist?.inboxList?.pending; let i = index">
         <ion-row>
           <ion-col size="3" class="my-auto">
             <ion-avatar>
@@ -104,7 +120,7 @@
       <p class="ion-margin-top ion-padding-top px-3">Currently, there is no communication in this folder</p>
     </ion-list>
     <ion-list *ngIf="segment === 'declined'">
-      <ion-card lines="none" *ngFor="let item of declined; let i = index">
+      <ion-card lines="none" *ngFor="let item of dropdownlist?.inboxList?.declined; let i = index">
         <ion-row>
           <ion-col size="3" class="my-auto">
             <ion-avatar>
@@ -155,6 +171,113 @@
       </ion-card>
     </ion-list>
   </ion-content>
+  <ion-content *ngIf="tabType == 'regular' && seletedValue === 'sent'" class="custom_regular">
+    <ion-list *ngIf="sentValue === 'all'">
+      <ion-card lines="none" *ngFor="let item of dropdownlist?.sentList?.all; let i = index">
+        <ion-row>
+          <ion-col size="3" class="my-auto">
+            <ion-avatar>
+              <img [src]="item.imgUrl">
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="9">
+            <ion-row>
+              <ion-col size="12" class="py-0">
+                <ion-label><span class="text-dark">{{item.profileName}} </span>(<small>{{item.profileId}}</small>)
+                </ion-label>
+              </ion-col>
+              <ion-col size="12" class="py-0">
+                <ion-col class="ion-no-padding" size="6">
+                  <small class="my-1">{{item.message.request_type}}</small>
+                </ion-col>
+                <ion-col class="ion-no-padding" size="6">
+                  <small class="my-1 ion-float-right">{{item.message.date}}</small>
+                </ion-col>
+              </ion-col>
+              <ion-col size="12">
+                <small class="text-dark">{{item.message.message_status}}</small>
+              </ion-col>
+              <ion-col size="12" *ngIf="item.mail_request">
+                <small class=" text-warning" (click)="onClick('all',item)">+{{item.mail_request.length }} More
+                  Conversation</small>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="my-auto" size="2">
+            <div class="rounded-pill border message_width d-flex px-2">
+              <ion-icon class="fs-1" color="warning" name="mail-outline"></ion-icon>
+              <small class="my-auto ms-1">MESSAGE</small>
+            </div>
+          </ion-col>
+          <ion-col size="10">
+            <div class="d-flex ion-float-end">
+              <ion-button shape="round" class="text-white" color="warning">
+                <ion-icon name="heart" class="text-white" *ngIf="item.message.name === 'SEND INTEREST'"></ion-icon>
+                <ion-icon name="alarm-outline" class="text-white" *ngIf="item.message.name === 'SEND REMINDER'"></ion-icon>
+                <small class="text-white ps-2">{{item.message.name}}</small>
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-list>
+    <ion-list *ngIf="sentValue === 'awaiting'">
+      <ion-card lines="none" *ngFor="let item of dropdownlist?.sentList?.awaiting_reply; let i = index">
+        <ion-row>
+          <ion-col size="3" class="my-auto">
+            <ion-avatar>
+              <img [src]="item.imgUrl">
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="9">
+            <ion-row>
+              <ion-col size="12" class="py-0">
+                <ion-label><span class="text-dark">{{item.profileName}} </span>(<small>{{item.profileId}}</small>)
+                </ion-label>
+              </ion-col>
+              <ion-col size="12" class="py-0">
+                <ion-col class="ion-no-padding" size="6">
+                  <small class="my-1">{{item.message.request_type}}</small>
+                </ion-col>
+                <ion-col class="ion-no-padding" size="6">
+                  <small class="my-1 ion-float-right">{{item.message.date}}</small>
+                </ion-col>
+              </ion-col>
+              <ion-col size="12">
+                <small class="text-dark">{{item.message.message_status}}</small>
+              </ion-col>
+              <ion-col size="12" *ngIf="item?.mail_request?.length">
+                <small class=" text-warning" (click)="onClick('pending',item)">+{{item.mail_request.length }} More
+                  Conversation</small>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="my-auto" size="2">
+            <div class="rounded-pill border message_width d-flex px-2">
+              <ion-icon class="fs-1" color="warning" name="mail-outline"></ion-icon>
+              <small class="my-auto ms-1">MESSAGE</small>
+            </div>
+          </ion-col>
+          <ion-col size="10">
+            <div class="d-flex ion-float-end">
+              <ion-button shape="round" class="text-white" color="warning">
+                <ion-icon name="heart" class="text-white" *ngIf="item.message.name === 'SEND INTEREST'"></ion-icon>
+                <ion-icon name="alarm-outline" class="text-white" *ngIf="item.message.name === 'SEND REMINDER'"></ion-icon>
+                <small class="text-white ps-2">{{item.message.name}}</small>
+              </ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-list>
+  </ion-content>
+  <ion-content *ngIf="tabType == 'regular' && seletedValue === 'filtered'" class="custom_regular">
+    <p class="ion-margin-top ion-padding-top px-3">Currently, there is no communication in this folder</p>
+  </ion-content>
   <ion-content *ngIf="tabType == 'prime'" class="custom_prime">
     <app-prime-matches *ngIf="tabType == 'prime'"></app-prime-matches>
   </ion-content>
@@ -162,4 +285,21 @@
 </ion-content>
 
 <ion-menu side="end" content-id="main-content">
+  <ion-content>
+    <p class="ion-padding-start text-muted">READ STATUS</p>
+    <ion-list *ngFor="let value of readStatus">
+      <ion-item>
+        <ion-checkbox [checked]="value.checked"></ion-checkbox>
+        <ion-label class="ms-2 pt-1">{{value.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <p class="ion-padding-start text-muted">CONVERSION TYPE</p>
+    <ion-list *ngFor="let value of conversationType">
+      <ion-item>
+        <ion-checkbox [checked]="value.checked"></ion-checkbox>
+        <ion-label class="ms-2 pt-1">{{value.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" color="warning">APPLY FILTER</ion-button>
+  </ion-content>
 </ion-menu>
